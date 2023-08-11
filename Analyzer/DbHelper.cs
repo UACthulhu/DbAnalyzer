@@ -17,7 +17,8 @@ namespace Analyzer
         DbProviderFactory? factory;
         DbConnection? conn;
 
-        DbHelper()
+        private const string SqlDbListQuery = "SELECT name FROM master.sys.databases;";
+        public DbHelper()
         {
             RegisterProviders();
         }
@@ -62,6 +63,29 @@ namespace Analyzer
 
             if (conn.State == ConnectionState.Open)
                 conn.Close();   
+        }
+
+        public Type GetConnType()
+        {
+            if (conn == null) throw new Exception();   
+            return conn.GetType();
+        }
+
+        public List<string> GetDbNames()
+        {
+            OpenConnection();
+            SqlCommand? cmd = new SqlCommand(SqlDbListQuery, conn as SqlConnection);
+
+            SqlDataReader reader =  cmd.ExecuteReader();
+
+            DataTable result = new DataTable();
+            result.Load(reader);
+
+            List<string> dbList = new List<string>();
+            foreach (DataRow r in result.Rows)
+                dbList.Add($"{r[0]}");
+
+            return dbList;
         }
     }
 }

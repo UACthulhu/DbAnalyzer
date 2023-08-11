@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CBProviderReport = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CBDatabases = new System.Windows.Forms.ComboBox();
+            this.CBTablesSave = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ButtonAnalyze = new System.Windows.Forms.Button();
@@ -79,21 +79,21 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Save report to";
             // 
-            // comboBox1
+            // CBDatabases
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(219, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 3;
+            this.CBDatabases.FormattingEnabled = true;
+            this.CBDatabases.Location = new System.Drawing.Point(219, 34);
+            this.CBDatabases.Name = "CBDatabases";
+            this.CBDatabases.Size = new System.Drawing.Size(151, 28);
+            this.CBDatabases.TabIndex = 3;
             // 
-            // comboBox2
+            // CBTablesSave
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(219, 97);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 4;
+            this.CBTablesSave.FormattingEnabled = true;
+            this.CBTablesSave.Location = new System.Drawing.Point(219, 97);
+            this.CBTablesSave.Name = "CBTablesSave";
+            this.CBTablesSave.Size = new System.Drawing.Size(151, 28);
+            this.CBTablesSave.TabIndex = 4;
             // 
             // label3
             // 
@@ -153,8 +153,8 @@
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.ButtonAnalyze);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CBTablesSave);
+            this.Controls.Add(this.CBDatabases);
             this.Controls.Add(this.CBProviderReport);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -175,8 +175,8 @@
         private Label label1;
         private ComboBox CBProviderReport;
         private Label label2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox CBDatabases;
+        private ComboBox CBTablesSave;
         private Label label3;
         private Label label4;
         private Button ButtonAnalyze;
