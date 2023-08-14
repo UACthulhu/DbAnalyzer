@@ -37,9 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ButtonAnalyze = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVMain = new System.Windows.Forms.DataGridView();
             this.ButtonSave = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVMain)).BeginInit();
             this.SuspendLayout();
             // 
             // CBProviderAnalyze
@@ -49,6 +49,7 @@
             this.CBProviderAnalyze.Name = "CBProviderAnalyze";
             this.CBProviderAnalyze.Size = new System.Drawing.Size(151, 28);
             this.CBProviderAnalyze.TabIndex = 0;
+            this.CBProviderAnalyze.SelectedIndexChanged += new System.EventHandler(this.CBProviderAnalyze_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -86,6 +87,7 @@
             this.CBDatabases.Name = "CBDatabases";
             this.CBDatabases.Size = new System.Drawing.Size(151, 28);
             this.CBDatabases.TabIndex = 3;
+            this.CBDatabases.SelectedIndexChanged += new System.EventHandler(this.CBDatabases_SelectedIndexChanged);
             // 
             // CBTablesSave
             // 
@@ -125,16 +127,18 @@
             this.ButtonAnalyze.TabIndex = 5;
             this.ButtonAnalyze.Text = "Analyze";
             this.ButtonAnalyze.UseVisualStyleBackColor = true;
+            this.ButtonAnalyze.Click += new System.EventHandler(this.ButtonAnalyze_Click);
             // 
-            // dataGridView1
+            // DGVMain
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 131);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 307);
-            this.dataGridView1.TabIndex = 6;
+            this.DGVMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVMain.Location = new System.Drawing.Point(11, 131);
+            this.DGVMain.Name = "DGVMain";
+            this.DGVMain.ReadOnly = true;
+            this.DGVMain.RowHeadersWidth = 51;
+            this.DGVMain.RowTemplate.Height = 29;
+            this.DGVMain.Size = new System.Drawing.Size(777, 307);
+            this.DGVMain.TabIndex = 6;
             // 
             // ButtonSave
             // 
@@ -151,7 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ButtonSave);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVMain);
             this.Controls.Add(this.ButtonAnalyze);
             this.Controls.Add(this.CBTablesSave);
             this.Controls.Add(this.CBDatabases);
@@ -163,7 +167,8 @@
             this.Controls.Add(this.CBProviderAnalyze);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +185,7 @@
         private Label label3;
         private Label label4;
         private Button ButtonAnalyze;
-        private DataGridView dataGridView1;
+        private DataGridView DGVMain;
         private Button ButtonSave;
     }
 }

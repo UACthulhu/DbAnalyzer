@@ -14,10 +14,12 @@ namespace Analyzer
 {
     internal class DbHelper
     {
-        DbProviderFactory? factory;
-        DbConnection? conn;
+        public DbProviderFactory? factory;
+        public DbConnection? conn;
 
         private const string SqlDbListQuery = "SELECT name FROM master.sys.databases;";
+        private const string MySqlDbListQuery = "SHOW DATABASES";
+
         public DbHelper()
         {
             RegisterProviders();
@@ -30,6 +32,11 @@ namespace Analyzer
         }
         public void SetProvider(string name)
         {
+            if (conn != null && conn.State == ConnectionState.Open)
+            {
+                CloseConnection();
+            }
+
             factory = DbProviderFactories.GetFactory(name);
             conn = factory.CreateConnection();
 
@@ -38,6 +45,8 @@ namespace Analyzer
             conn.ConnectionString = ConfigurationManager
                 .ConnectionStrings[name]
                 .ConnectionString;
+
+            OpenConnection();
         }
         public DbConnection GetConnection()
         {
@@ -65,18 +74,27 @@ namespace Analyzer
                 conn.Close();   
         }
 
-        public Type GetConnType()
+        public string GetConnType()
         {
             if (conn == null) throw new Exception();   
-            return conn.GetType();
+            return conn.GetType().Name;
         }
 
         public List<string> GetDbNames()
         {
-            OpenConnection();
-            SqlCommand? cmd = new SqlCommand(SqlDbListQuery, conn as SqlConnection);
-
-            SqlDataReader reader =  cmd.ExecuteReader();
+            //OpenConnection();
+            DbCommand? cmd = null;
+            switch (GetConnType())
+            {
+                case "SqlConnection":
+                    cmd = new SqlCommand(SqlDbListQuery, conn as SqlConnection);
+                    break;
+                case "MySqlConnection":
+                    cmd = new MySqlCommand(MySqlDbListQuery, conn as MySqlConnection);
+                    break;
+            }
+            if (cmd == null) throw new Exception("cmd is empty");
+            DbDataReader reader =  cmd.ExecuteReader();
 
             DataTable result = new DataTable();
             result.Load(reader);
@@ -85,7 +103,14 @@ namespace Analyzer
             foreach (DataRow r in result.Rows)
                 dbList.Add($"{r[0]}");
 
+            //CloseConnection();
             return dbList;
+        }
+
+        public void SetDb(string name)
+        {
+            if (conn == null) throw new Exception("No connection");
+            conn.ChangeDatabase(name);
         }
     }
 }
