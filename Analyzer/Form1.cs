@@ -40,8 +40,16 @@ namespace Analyzer
         private void ButtonAnalyze_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(helper.GetConnType().ToString());
-            DGVMain.DataSource = analyzer.GetTables();
+            if(helper.conn != null && helper.conn.State != ConnectionState.Open)
+            {
+                 helper.OpenConnection();
+            }
+
             DGVMain.Update();
+            if(helper.conn != null && helper.conn.State == ConnectionState.Open)
+            {
+                helper.CloseConnection();
+            }
         }
 
         private void CBProviderAnalyze_SelectedIndexChanged(object sender, EventArgs e)

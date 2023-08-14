@@ -39,6 +39,9 @@
             this.ButtonAnalyze = new System.Windows.Forms.Button();
             this.DGVMain = new System.Windows.Forms.DataGridView();
             this.ButtonSave = new System.Windows.Forms.Button();
+            this.CBProcedures = new System.Windows.Forms.CheckBox();
+            this.CBDateCreated = new System.Windows.Forms.CheckBox();
+            this.CBDateCurrent = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +152,44 @@
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
             // 
+            // CBProcedures
+            // 
+            this.CBProcedures.AutoSize = true;
+            this.CBProcedures.Location = new System.Drawing.Point(396, 9);
+            this.CBProcedures.Name = "CBProcedures";
+            this.CBProcedures.Size = new System.Drawing.Size(104, 24);
+            this.CBProcedures.TabIndex = 8;
+            this.CBProcedures.Text = "Procedures";
+            this.CBProcedures.UseVisualStyleBackColor = true;
+            // 
+            // CBDateCreated
+            // 
+            this.CBDateCreated.AutoSize = true;
+            this.CBDateCreated.Location = new System.Drawing.Point(396, 54);
+            this.CBDateCreated.Name = "CBDateCreated";
+            this.CBDateCreated.Size = new System.Drawing.Size(98, 24);
+            this.CBDateCreated.TabIndex = 8;
+            this.CBDateCreated.Text = "CreatedAt";
+            this.CBDateCreated.UseVisualStyleBackColor = true;
+            // 
+            // CBDateCurrent
+            // 
+            this.CBDateCurrent.AutoSize = true;
+            this.CBDateCurrent.Location = new System.Drawing.Point(396, 97);
+            this.CBDateCurrent.Name = "CBDateCurrent";
+            this.CBDateCurrent.Size = new System.Drawing.Size(108, 24);
+            this.CBDateCurrent.TabIndex = 8;
+            this.CBDateCurrent.Text = "ReportDate";
+            this.CBDateCurrent.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CBDateCurrent);
+            this.Controls.Add(this.CBDateCreated);
+            this.Controls.Add(this.CBProcedures);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.DGVMain);
             this.Controls.Add(this.ButtonAnalyze);
@@ -187,5 +223,8 @@
         private Button ButtonAnalyze;
         private DataGridView DGVMain;
         private Button ButtonSave;
+        private CheckBox CBProcedures;
+        private CheckBox CBDateCreated;
+        private CheckBox CBDateCurrent;
     }
 }
