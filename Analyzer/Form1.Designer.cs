@@ -48,7 +48,7 @@
             // CBProviderAnalyze
             // 
             this.CBProviderAnalyze.FormattingEnabled = true;
-            this.CBProviderAnalyze.Location = new System.Drawing.Point(24, 34);
+            this.CBProviderAnalyze.Location = new System.Drawing.Point(12, 34);
             this.CBProviderAnalyze.Name = "CBProviderAnalyze";
             this.CBProviderAnalyze.Size = new System.Drawing.Size(151, 28);
             this.CBProviderAnalyze.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 3);
+            this.label1.Location = new System.Drawing.Point(14, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 28);
             this.label1.TabIndex = 1;
@@ -68,7 +68,7 @@
             // CBProviderReport
             // 
             this.CBProviderReport.FormattingEnabled = true;
-            this.CBProviderReport.Location = new System.Drawing.Point(24, 97);
+            this.CBProviderReport.Location = new System.Drawing.Point(12, 97);
             this.CBProviderReport.Name = "CBProviderReport";
             this.CBProviderReport.Size = new System.Drawing.Size(151, 28);
             this.CBProviderReport.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(24, 66);
+            this.label2.Location = new System.Drawing.Point(14, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 28);
             this.label2.TabIndex = 1;
@@ -86,7 +86,7 @@
             // CBDatabases
             // 
             this.CBDatabases.FormattingEnabled = true;
-            this.CBDatabases.Location = new System.Drawing.Point(219, 34);
+            this.CBDatabases.Location = new System.Drawing.Point(201, 34);
             this.CBDatabases.Name = "CBDatabases";
             this.CBDatabases.Size = new System.Drawing.Size(151, 28);
             this.CBDatabases.TabIndex = 3;
@@ -95,7 +95,7 @@
             // CBTablesSave
             // 
             this.CBTablesSave.FormattingEnabled = true;
-            this.CBTablesSave.Location = new System.Drawing.Point(219, 97);
+            this.CBTablesSave.Location = new System.Drawing.Point(201, 97);
             this.CBTablesSave.Name = "CBTablesSave";
             this.CBTablesSave.Size = new System.Drawing.Size(151, 28);
             this.CBTablesSave.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(219, 66);
+            this.label3.Location = new System.Drawing.Point(201, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 28);
             this.label3.TabIndex = 1;
@@ -115,7 +115,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(219, 3);
+            this.label4.Location = new System.Drawing.Point(201, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 28);
             this.label4.TabIndex = 1;
@@ -124,7 +124,7 @@
             // 
             // ButtonAnalyze
             // 
-            this.ButtonAnalyze.Location = new System.Drawing.Point(694, 12);
+            this.ButtonAnalyze.Location = new System.Drawing.Point(777, 12);
             this.ButtonAnalyze.Name = "ButtonAnalyze";
             this.ButtonAnalyze.Size = new System.Drawing.Size(94, 29);
             this.ButtonAnalyze.TabIndex = 5;
@@ -135,17 +135,17 @@
             // DGVMain
             // 
             this.DGVMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVMain.Location = new System.Drawing.Point(11, 131);
+            this.DGVMain.Location = new System.Drawing.Point(12, 132);
             this.DGVMain.Name = "DGVMain";
             this.DGVMain.ReadOnly = true;
             this.DGVMain.RowHeadersWidth = 51;
             this.DGVMain.RowTemplate.Height = 29;
-            this.DGVMain.Size = new System.Drawing.Size(777, 307);
+            this.DGVMain.Size = new System.Drawing.Size(859, 307);
             this.DGVMain.TabIndex = 6;
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(694, 97);
+            this.ButtonSave.Location = new System.Drawing.Point(777, 97);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(94, 29);
             this.ButtonSave.TabIndex = 7;
@@ -155,7 +155,7 @@
             // CBProcedures
             // 
             this.CBProcedures.AutoSize = true;
-            this.CBProcedures.Location = new System.Drawing.Point(396, 9);
+            this.CBProcedures.Location = new System.Drawing.Point(391, 17);
             this.CBProcedures.Name = "CBProcedures";
             this.CBProcedures.Size = new System.Drawing.Size(104, 24);
             this.CBProcedures.TabIndex = 8;
@@ -165,7 +165,7 @@
             // CBDateCreated
             // 
             this.CBDateCreated.AutoSize = true;
-            this.CBDateCreated.Location = new System.Drawing.Point(396, 54);
+            this.CBDateCreated.Location = new System.Drawing.Point(501, 17);
             this.CBDateCreated.Name = "CBDateCreated";
             this.CBDateCreated.Size = new System.Drawing.Size(98, 24);
             this.CBDateCreated.TabIndex = 8;
@@ -175,7 +175,7 @@
             // CBDateCurrent
             // 
             this.CBDateCurrent.AutoSize = true;
-            this.CBDateCurrent.Location = new System.Drawing.Point(396, 97);
+            this.CBDateCurrent.Location = new System.Drawing.Point(605, 17);
             this.CBDateCurrent.Name = "CBDateCurrent";
             this.CBDateCurrent.Size = new System.Drawing.Size(108, 24);
             this.CBDateCurrent.TabIndex = 8;
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(883, 450);
             this.Controls.Add(this.CBDateCurrent);
             this.Controls.Add(this.CBDateCreated);
             this.Controls.Add(this.CBProcedures);
@@ -203,6 +203,7 @@
             this.Controls.Add(this.CBProviderAnalyze);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVMain)).EndInit();
             this.ResumeLayout(false);

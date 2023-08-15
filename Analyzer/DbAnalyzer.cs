@@ -84,7 +84,7 @@ namespace Analyzer
         }
         public void Analyze()
         {
-
+            
         }
 
     }

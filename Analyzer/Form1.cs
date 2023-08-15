@@ -45,11 +45,28 @@ namespace Analyzer
                  helper.OpenConnection();
             }
 
-            DGVMain.Update();
-            if(helper.conn != null && helper.conn.State == ConnectionState.Open)
-            {
-                helper.CloseConnection();
-            }
+            //DataGridView dv = new DataGridView();
+            //dv.Height = 380;
+            //dv.Width = 350;
+            //dv.Location = new Point(400,131);
+            //this.Controls.Add(dv);
+
+            DGVMain.DataSource = analyzer.GetTables();
+            DGVMain.RowHeadersVisible = false;
+            //DGVMain.Columns[0].Width = 90;
+            DGVMain.Columns[1].Width = 80;
+            DGVMain.Width = DGVMain.Columns.GetColumnsWidth(0);
+
+            if (DGVMain.Rows.GetRowsHeight(0) > DGVMain.Height)
+                DGVMain.Width += 25;
+
+
+
+                DGVMain.Update();
+            //if(helper.conn != null && helper.conn.State == ConnectionState.Open)
+            //{
+            //    helper.CloseConnection();
+            //}
         }
 
         private void CBProviderAnalyze_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,6 +96,11 @@ namespace Analyzer
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            helper.CloseConnection();
         }
     }
 }
