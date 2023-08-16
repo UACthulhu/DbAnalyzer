@@ -63,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(127, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Analyze from";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // CBProviderReport
             // 
@@ -109,7 +108,6 @@
             this.label3.Size = new System.Drawing.Size(57, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "Table";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -120,7 +118,6 @@
             this.label4.Size = new System.Drawing.Size(92, 28);
             this.label4.TabIndex = 1;
             this.label4.Text = "DataBase";
-            this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
             // ButtonAnalyze
             // 
@@ -206,7 +203,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

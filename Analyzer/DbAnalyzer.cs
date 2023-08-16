@@ -18,10 +18,11 @@ namespace Analyzer
         public const string SqlTablesQuery = "SELECT o.name AS [TableName], SUM(p.Rows) AS [RowCount], DB_NAME() AS [DataBaseName] FROM sys.objects AS o INNER JOIN sys.partitions AS p ON o.object_id = p.object_id WHERE o.type = 'U' GROUP BY o.schema_id, o.name;";
         public const string MySqlTablesQuery = "SELECT table_name, TABLE_ROWS, DATABASE() FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = DATABASE();";
 
-        public const string SqlTablesCreatDateQuery = "SELECT o.create_date AS [CreateDate] FROM sys.objects AS o INNER JOIN sys.partitions AS p ON o.object_id = p.object_id WHERE o.type = 'U' GROUP BY o.schema_id, o.name, o.create_date;";
+        public const string SqlTablesCreateDateQuery = "SELECT o.create_date AS [CreateDate] FROM sys.objects AS o INNER JOIN sys.partitions AS p ON o.object_id = p.object_id WHERE o.type = 'U' GROUP BY o.schema_id, o.name, o.create_date;";
+        public const string MySqlTablesCreateDateQuery = "SELECT create_time FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = DATABASE();";
 
         public const string SqlProceduredQuery = "SELECT ROUTINE_NAME AS [Name], ROUTINE_DEFINITION AS [Definition], SPECIFIC_CATALOG AS [DbName] FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";
-        public const string MySqlProceduredQuery = "SELECT ROUTINE_NAME, ROUTINE_DEFINITION, SPECIFIC_CATALOG FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";
+        public const string MySqlProceduredQuery = "SELECT ROUTINE_NAME, ROUTINE_DEFINITION, DATABASE() FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";
 
 
 
@@ -52,10 +53,6 @@ namespace Analyzer
             DataTable result = new DataTable();
             result.Load(reader);
 
-            //List<string> TbList = new List<string>();
-            //foreach (DataRow r in result.Rows)
-            //    TbList.Add($"{r[0]}");
-
             return result;
         }
         public DataTable GetProcedures()
@@ -78,10 +75,6 @@ namespace Analyzer
             DataTable result = new DataTable();
             result.Load(reader);
 
-            //List<string> TbList = new List<string>();
-            //foreach (DataRow r in result.Rows)
-            //    TbList.Add($"{r[0]}");
-
             return result;
         }
 
@@ -93,10 +86,10 @@ namespace Analyzer
             switch (conn.GetType().Name)
             {
                 case "SqlConnection":
-                    cmd = new SqlCommand(SqlTablesCreatDateQuery, conn as SqlConnection);
+                    cmd = new SqlCommand(SqlTablesCreateDateQuery, conn as SqlConnection);
                     break;
                 case "MySqlConnection":
-                    cmd = new MySqlCommand(MySqlProceduredQuery, conn as MySqlConnection);
+                    cmd = new MySqlCommand(MySqlTablesCreateDateQuery, conn as MySqlConnection);
                     break;
             }
             if (cmd == null) throw new Exception("cmd is empty");
@@ -104,9 +97,6 @@ namespace Analyzer
 
             DataTable result = new DataTable();
             result.Load(reader);
-            //List<string> TbList = new List<string>();
-            //foreach (DataRow r in result.Rows)
-            //    TbList.Add($"{r[0]}");
 
             return result;
         }
@@ -138,8 +128,7 @@ namespace Analyzer
                 result.Add(GetProcedures());
             }
 
-            return result;
-            
+            return result;           
         }
 
     }
