@@ -18,7 +18,7 @@ namespace Analyzer
         public const string SqlTablesQuery = "SELECT o.name AS [TableName], SUM(p.Rows) AS [RowCount], DB_NAME() AS [DataBaseName] FROM sys.objects AS o INNER JOIN sys.partitions AS p ON o.object_id = p.object_id WHERE o.type = 'U' GROUP BY o.schema_id, o.name;";
         public const string MySqlTablesQuery = "SELECT table_name, TABLE_ROWS, DATABASE() FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = DATABASE();";
 
-        public const string SqlTablesCreatDateQuery = "SELECT o.create_date AS [CreateDate] FROM sys.objects AS o INNER JOIN sys.partitions AS p ON o.object_id = p.object_id WHERE o.type = 'U' GROUP BY o.create_date;";
+        public const string SqlTablesCreatDateQuery = "SELECT o.create_date AS [CreateDate] FROM sys.objects AS o INNER JOIN sys.partitions AS p ON o.object_id = p.object_id WHERE o.type = 'U' GROUP BY o.schema_id, o.name, o.create_date;";
 
         public const string SqlProceduredQuery = "SELECT ROUTINE_NAME AS [Name], ROUTINE_DEFINITION AS [Definition], SPECIFIC_CATALOG AS [DbName] FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";
         public const string MySqlProceduredQuery = "SELECT ROUTINE_NAME, ROUTINE_DEFINITION, SPECIFIC_CATALOG FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";

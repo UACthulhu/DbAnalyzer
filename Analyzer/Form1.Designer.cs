@@ -124,7 +124,7 @@
             // 
             // ButtonAnalyze
             // 
-            this.ButtonAnalyze.Location = new System.Drawing.Point(926, 11);
+            this.ButtonAnalyze.Location = new System.Drawing.Point(388, 33);
             this.ButtonAnalyze.Name = "ButtonAnalyze";
             this.ButtonAnalyze.Size = new System.Drawing.Size(94, 29);
             this.ButtonAnalyze.TabIndex = 5;
@@ -134,17 +134,18 @@
             // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(926, 96);
+            this.ButtonSave.Location = new System.Drawing.Point(388, 97);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(94, 29);
             this.ButtonSave.TabIndex = 7;
             this.ButtonSave.Text = "Save";
             this.ButtonSave.UseVisualStyleBackColor = true;
+            this.ButtonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // CBProcedures
             // 
             this.CBProcedures.AutoSize = true;
-            this.CBProcedures.Location = new System.Drawing.Point(391, 17);
+            this.CBProcedures.Location = new System.Drawing.Point(12, 144);
             this.CBProcedures.Name = "CBProcedures";
             this.CBProcedures.Size = new System.Drawing.Size(104, 24);
             this.CBProcedures.TabIndex = 8;
@@ -154,7 +155,7 @@
             // CBDateCreated
             // 
             this.CBDateCreated.AutoSize = true;
-            this.CBDateCreated.Location = new System.Drawing.Point(516, 17);
+            this.CBDateCreated.Location = new System.Drawing.Point(150, 144);
             this.CBDateCreated.Name = "CBDateCreated";
             this.CBDateCreated.Size = new System.Drawing.Size(98, 24);
             this.CBDateCreated.TabIndex = 8;
@@ -164,7 +165,7 @@
             // CBDateCurrent
             // 
             this.CBDateCurrent.AutoSize = true;
-            this.CBDateCurrent.Location = new System.Drawing.Point(630, 17);
+            this.CBDateCurrent.Location = new System.Drawing.Point(287, 144);
             this.CBDateCurrent.Name = "CBDateCurrent";
             this.CBDateCurrent.Size = new System.Drawing.Size(108, 24);
             this.CBDateCurrent.TabIndex = 8;
@@ -174,12 +175,12 @@
             // DGVMain
             // 
             this.DGVMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVMain.Location = new System.Drawing.Point(926, 131);
+            this.DGVMain.Location = new System.Drawing.Point(3, 460);
             this.DGVMain.Name = "DGVMain";
             this.DGVMain.ReadOnly = true;
             this.DGVMain.RowHeadersWidth = 51;
             this.DGVMain.RowTemplate.Height = 29;
-            this.DGVMain.Size = new System.Drawing.Size(94, 306);
+            this.DGVMain.Size = new System.Drawing.Size(94, 10);
             this.DGVMain.TabIndex = 6;
             this.DGVMain.Visible = false;
             // 
@@ -187,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 448);
+            this.ClientSize = new System.Drawing.Size(501, 279);
             this.Controls.Add(this.CBDateCurrent);
             this.Controls.Add(this.CBDateCreated);
             this.Controls.Add(this.CBProcedures);

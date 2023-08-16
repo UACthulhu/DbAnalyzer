@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 
 namespace Analyzer
 {
-    public delegate DataGridView CreateDGV();
+    //public delegate DataGridView CreateDGV();
     //public delegate void DisposeDGV(DataGridView dgv);
 
 
@@ -19,6 +19,8 @@ namespace Analyzer
         DbHelper helper;
         DbAnalyzer analyzer;
         DbViewer viewer;
+
+
 
         public void FillCbProviders()
         {
@@ -39,19 +41,19 @@ namespace Analyzer
             analyzer = new DbAnalyzer();
             FillCbProviders();
 
-            CreateDGV CreateDGV = () =>
-            {
-                DataGridView dgv = new DataGridView();
-                this.Controls.Add(dgv);
-                return dgv;
-            };
+            //CreateDGV CreateDGV = () =>
+            //{
+            //    DataGridView dgv = new DataGridView();
+            //    this.Controls.Add(dgv);
+            //    return dgv;
+            //};
 
             //DisposeDGV disposeDGV = (DataGridView dgv) =>
             //{
             //    dgv.Dispose();
             //};
 
-            viewer = new DbViewer(CreateDGV);
+            viewer = new DbViewer();
 
         }
         private void label1_Click(object sender, EventArgs e)
@@ -126,6 +128,11 @@ namespace Analyzer
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             helper.CloseConnection();
+        }
+
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
