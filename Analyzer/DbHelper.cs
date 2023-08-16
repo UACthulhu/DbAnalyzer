@@ -13,6 +13,7 @@ using System.Configuration.Provider;
 namespace Analyzer
 {
     internal class DbHelper
+
     {
         public DbProviderFactory? factory;
         public DbConnection? conn;

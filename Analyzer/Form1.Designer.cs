@@ -37,11 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ButtonAnalyze = new System.Windows.Forms.Button();
-            this.DGVMain = new System.Windows.Forms.DataGridView();
             this.ButtonSave = new System.Windows.Forms.Button();
             this.CBProcedures = new System.Windows.Forms.CheckBox();
             this.CBDateCreated = new System.Windows.Forms.CheckBox();
             this.CBDateCurrent = new System.Windows.Forms.CheckBox();
+            this.DGVMain = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DGVMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +124,7 @@
             // 
             // ButtonAnalyze
             // 
-            this.ButtonAnalyze.Location = new System.Drawing.Point(777, 12);
+            this.ButtonAnalyze.Location = new System.Drawing.Point(926, 11);
             this.ButtonAnalyze.Name = "ButtonAnalyze";
             this.ButtonAnalyze.Size = new System.Drawing.Size(94, 29);
             this.ButtonAnalyze.TabIndex = 5;
@@ -132,20 +132,9 @@
             this.ButtonAnalyze.UseVisualStyleBackColor = true;
             this.ButtonAnalyze.Click += new System.EventHandler(this.ButtonAnalyze_Click);
             // 
-            // DGVMain
-            // 
-            this.DGVMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVMain.Location = new System.Drawing.Point(12, 132);
-            this.DGVMain.Name = "DGVMain";
-            this.DGVMain.ReadOnly = true;
-            this.DGVMain.RowHeadersWidth = 51;
-            this.DGVMain.RowTemplate.Height = 29;
-            this.DGVMain.Size = new System.Drawing.Size(859, 307);
-            this.DGVMain.TabIndex = 6;
-            // 
             // ButtonSave
             // 
-            this.ButtonSave.Location = new System.Drawing.Point(777, 97);
+            this.ButtonSave.Location = new System.Drawing.Point(926, 96);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(94, 29);
             this.ButtonSave.TabIndex = 7;
@@ -165,7 +154,7 @@
             // CBDateCreated
             // 
             this.CBDateCreated.AutoSize = true;
-            this.CBDateCreated.Location = new System.Drawing.Point(501, 17);
+            this.CBDateCreated.Location = new System.Drawing.Point(516, 17);
             this.CBDateCreated.Name = "CBDateCreated";
             this.CBDateCreated.Size = new System.Drawing.Size(98, 24);
             this.CBDateCreated.TabIndex = 8;
@@ -175,18 +164,30 @@
             // CBDateCurrent
             // 
             this.CBDateCurrent.AutoSize = true;
-            this.CBDateCurrent.Location = new System.Drawing.Point(605, 17);
+            this.CBDateCurrent.Location = new System.Drawing.Point(630, 17);
             this.CBDateCurrent.Name = "CBDateCurrent";
             this.CBDateCurrent.Size = new System.Drawing.Size(108, 24);
             this.CBDateCurrent.TabIndex = 8;
             this.CBDateCurrent.Text = "ReportDate";
             this.CBDateCurrent.UseVisualStyleBackColor = true;
             // 
+            // DGVMain
+            // 
+            this.DGVMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVMain.Location = new System.Drawing.Point(926, 131);
+            this.DGVMain.Name = "DGVMain";
+            this.DGVMain.ReadOnly = true;
+            this.DGVMain.RowHeadersWidth = 51;
+            this.DGVMain.RowTemplate.Height = 29;
+            this.DGVMain.Size = new System.Drawing.Size(94, 306);
+            this.DGVMain.TabIndex = 6;
+            this.DGVMain.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 450);
+            this.ClientSize = new System.Drawing.Size(1027, 448);
             this.Controls.Add(this.CBDateCurrent);
             this.Controls.Add(this.CBDateCreated);
             this.Controls.Add(this.CBProcedures);
@@ -222,10 +223,10 @@
         private Label label3;
         private Label label4;
         private Button ButtonAnalyze;
-        private DataGridView DGVMain;
         private Button ButtonSave;
         private CheckBox CBProcedures;
         private CheckBox CBDateCreated;
         private CheckBox CBDateCurrent;
+        private DataGridView DGVMain;
     }
 }
