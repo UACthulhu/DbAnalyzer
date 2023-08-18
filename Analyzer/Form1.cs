@@ -15,7 +15,7 @@ namespace Analyzer
         DbHelper helper;
         DbAnalyzer analyzer;
         DbViewer viewer;
-
+        ReportSaver saver;
 
 
         public void FillCbProviders()
@@ -27,6 +27,7 @@ namespace Analyzer
 
             }
             CBProviderAnalyze.SelectedItem = "express";
+            CBProviderReport.SelectedItem = "express";
         }
         public Form1()
         {
@@ -35,17 +36,25 @@ namespace Analyzer
             helper = new DbHelper();
             analyzer = new DbAnalyzer();
             viewer = new DbViewer();
+            saver = new ReportSaver();
 
             FillCbProviders();
 
         }
         private void ButtonAnalyze_Click(object sender, EventArgs e)
         {
-            if(helper.conn != null && helper.conn.State != ConnectionState.Open)
-            {
-                 helper.OpenConnection();
-            }
+            string? providerName = CBProviderAnalyze.SelectedItem.ToString();
 
+            if (providerName == null)
+                throw new Exception("No provider chosen");
+            helper.SetProvider(providerName);
+
+            string? DbName = CBDatabases.SelectedItem.ToString();
+            if (DbName == null) throw new Exception("No Database chosen");
+
+            helper.SetDb(DbName);
+
+            analyzer.SetConnection(helper.GetConnection());
 
             viewer.showResult(analyzer.Analyze(CBProcedures.Checked, CBDateCreated.Checked, CBDateCurrent.Checked));
 
@@ -58,7 +67,7 @@ namespace Analyzer
             if (providerName == null)
                 throw new Exception("No provider chosen");
             helper.SetProvider(providerName);
-            analyzer.SetConnection(helper.GetConnection());
+            //analyzer.SetConnection(helper.GetConnection());
             CBDatabases.Items.Clear();
             foreach (string s in helper.GetDbNames())
             {
@@ -68,10 +77,10 @@ namespace Analyzer
         }
         private void CBDatabases_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string? DbName = CBDatabases.SelectedItem.ToString();
-            if (DbName == null) throw new Exception("No Database chosen");
+            //string? DbName = CBDatabases.SelectedItem.ToString();
+            //if (DbName == null) throw new Exception("No Database chosen");
 
-            helper.SetDb(DbName);
+            //helper.SetDb(DbName);
         }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -79,7 +88,64 @@ namespace Analyzer
         }
         private void ButtonSave_Click(object sender, EventArgs e)
         {
+            string name = "test";
 
+            string? providerName = CBProviderReport.SelectedItem.ToString();
+            string? DbName = CBDBSave.SelectedItem.ToString();
+
+            if (providerName == null)
+                throw new Exception("No provider chosen");
+            helper.SetProvider(providerName);
+
+            if (DbName == null) throw new Exception("no db set");
+
+            if (DbName == "NewDB")
+            {
+                if (!helper.GetDbNames().Contains(name))
+                    helper.CreateDb(name);
+                else
+                {
+                    helper.DropDb(name);
+                    helper.CreateDb(name);
+                }
+                DbName = name;
+            }
+
+            helper.SetDb(DbName);
+
+            string nameT = "testT";
+            string nameP = "testP";
+
+            saver.SetConnection(helper.GetConnection());
+
+            if (!helper.GetTablesNames().Contains(nameT))
+                saver.CrateTableT(nameT);
+            if (!helper.GetTablesNames().Contains(nameP))
+                saver.CrateTableP(nameP);
+
+        }
+        private void CBDBSave_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (saver.conn == null) throw new Exception("no connection");
+            
+
+        }
+
+        private void CBProviderReport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string? providerName = CBProviderReport.SelectedItem.ToString();
+
+            if (providerName == null)
+                throw new Exception("No provider chosen");
+            helper.SetProvider(providerName);
+            saver.SetConnection(helper.GetConnection());
+            CBDBSave.Items.Clear();
+            foreach (string s in helper.GetDbNames())
+            {
+                CBDBSave.Items.Add(s);
+            }
+            CBDBSave.Items.Add("NewDB"); 
+            CBDBSave.SelectedItem = "NewDB";
         }
     }
 }

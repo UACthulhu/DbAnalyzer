@@ -20,7 +20,7 @@ namespace Analyzer
         {
             FormView fw = new FormView();
 
-            DisposeAll();
+            //DisposeAll();
 
             DataGridView dgv = new DataGridView();
             fw.Controls.Add(dgv);
@@ -39,7 +39,7 @@ namespace Analyzer
         {
             FormView fw = new FormView();
 
-            DisposeAll();
+            //DisposeAll();
             int w = 10;
             foreach(DataTable table in tables)
             {

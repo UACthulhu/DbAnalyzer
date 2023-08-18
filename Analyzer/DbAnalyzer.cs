@@ -24,9 +24,6 @@ namespace Analyzer
         public const string SqlProceduredQuery = "SELECT ROUTINE_NAME AS [Name], ROUTINE_DEFINITION AS [Definition], SPECIFIC_CATALOG AS [DbName] FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";
         public const string MySqlProceduredQuery = "SELECT ROUTINE_NAME, ROUTINE_DEFINITION, DATABASE() FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_TYPE = 'PROCEDURE';";
 
-
-
-
         public DbConnection? conn { get; set;}
 
         public void SetConnection(DbConnection connection)

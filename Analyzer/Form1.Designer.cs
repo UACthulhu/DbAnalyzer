@@ -33,7 +33,7 @@
             this.CBProviderReport = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.CBDatabases = new System.Windows.Forms.ComboBox();
-            this.CBTablesSave = new System.Windows.Forms.ComboBox();
+            this.CBDBSave = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ButtonAnalyze = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@
             this.CBProviderReport.Name = "CBProviderReport";
             this.CBProviderReport.Size = new System.Drawing.Size(151, 28);
             this.CBProviderReport.TabIndex = 2;
+            this.CBProviderReport.SelectedIndexChanged += new System.EventHandler(this.CBProviderReport_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -91,13 +92,14 @@
             this.CBDatabases.TabIndex = 3;
             this.CBDatabases.SelectedIndexChanged += new System.EventHandler(this.CBDatabases_SelectedIndexChanged);
             // 
-            // CBTablesSave
+            // CBDBSave
             // 
-            this.CBTablesSave.FormattingEnabled = true;
-            this.CBTablesSave.Location = new System.Drawing.Point(201, 97);
-            this.CBTablesSave.Name = "CBTablesSave";
-            this.CBTablesSave.Size = new System.Drawing.Size(151, 28);
-            this.CBTablesSave.TabIndex = 4;
+            this.CBDBSave.FormattingEnabled = true;
+            this.CBDBSave.Location = new System.Drawing.Point(201, 98);
+            this.CBDBSave.Name = "CBDBSave";
+            this.CBDBSave.Size = new System.Drawing.Size(151, 28);
+            this.CBDBSave.TabIndex = 4;
+            this.CBDBSave.SelectedIndexChanged += new System.EventHandler(this.CBDBSave_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -105,9 +107,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(201, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 28);
+            this.label3.Size = new System.Drawing.Size(92, 28);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Table";
+            this.label3.Text = "DataBase";
             // 
             // label4
             // 
@@ -192,7 +194,7 @@
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.DGVMain);
             this.Controls.Add(this.ButtonAnalyze);
-            this.Controls.Add(this.CBTablesSave);
+            this.Controls.Add(this.CBDBSave);
             this.Controls.Add(this.CBDatabases);
             this.Controls.Add(this.CBProviderReport);
             this.Controls.Add(this.label2);
@@ -216,7 +218,7 @@
         private ComboBox CBProviderReport;
         private Label label2;
         private ComboBox CBDatabases;
-        private ComboBox CBTablesSave;
+        private ComboBox CBDBSave;
         private Label label3;
         private Label label4;
         private Button ButtonAnalyze;
